@@ -6,7 +6,9 @@
 import sys
 
 def even_or_odd(number):
-    if number % 2 == 0:
+    if number == 0:
+        print("Neutral")
+    elif number % 2 == 0:
         return "Even"
     else:
         return "Odd"
@@ -14,7 +16,11 @@ def even_or_odd(number):
 def main():
     print("Welcome to Is it Even Or Odd!")
     print() # Blank Line
-    get_number = int(input("Please Enter A Number: "))
+    try:
+        get_number = int(input("Please Enter A Number: "))
+    except:
+        print("That is not a number. Please try again.")
+        get_number = int(input("Please Enter A Number: "))
     print(even_or_odd(get_number)) # Based on my knowledge with functions in Python, this should work???
 
 if __name__ == "__main__":
